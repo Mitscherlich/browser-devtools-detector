@@ -1,32 +1,52 @@
-# my-ts-lib
+# browser-devtools-detector
 
-[![npm version](https://badgen.net/npm/v/my-ts-lib)](https://npm.im/my-ts-lib) [![npm downloads](https://badgen.net/npm/dm/my-ts-lib)](https://npm.im/my-ts-lib)
-
-## Using this template
-
-- Search `my-ts-lib` and replace it with your custom package name.
-
-Features:
-
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Release with [semantic-release](https://npm.im/semantic-release)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [vitest](https://vitest.dev)
-
-To skip CI (GitHub action), add `skip-ci` to commit message. To skip release, add `skip-release` to commit message.
+Detect if browser devtools is opened.
 
 ## Install
 
-via `pnpm`, `yarn` or `npm`:
+install via npm:
 
-```bash
-pnpm add my-ts-lib
-# or
-yarn add my-ts-lib
-# or
-npm i -S my-ts-lib
+```sh
+# via npm
+$ npm i --save browser-devtools-detector
+# or yarn
+$ yarn add browser-devtools-detector
+# or pnpm
+$ pnpm add browser-devtools-detector
+```
+
+## Usage
+
+- basic example:
+
+```js
+import devtools from 'browser-devtools-detector'
+
+devtools.on('change', (isOpen, detail) => {
+  console.log('devtools is opened?', isOpen)
+})
+
+devtools.launch()
+```
+
+- or you can create your own instance:
+
+```js
+import { DevtoolsDetector } from 'browser-devtools-detector'
+
+const devtools = new DevtoolsDetector({
+  threshold: 100, // default
+})
+
+// same as basic usage
+```
+
+- set detect delay (*default to 500ms*):
+
+```js
+devtools.setDetectDelay(300)
 ```
 
 ## License
 
-MIT &copy; [Mitscherlich](https://mitscherlich.me)
+[MIT](LICENSE)

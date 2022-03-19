@@ -1,17 +1,9 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "es2020",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "resolveJsonModule": true
-  },
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "baseUrl": ".",
+    "paths": {
+      "browser-devtools-detector": ["."]
+    }
+  }
 }
