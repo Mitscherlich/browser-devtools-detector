@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "description": "Zero-deps detector checking if browser devtools is opened",
   "license": "MIT",
+  "homepage": "https://github.com/Mitscherlich/browser-devtools-detector#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mitscherlich/browser-devtools-detector.git"
+  },
+  "bugs": "https://github.com/Mitscherlich/browser-devtools-detector/issues",
   "files": [
     "dist"
   ],
