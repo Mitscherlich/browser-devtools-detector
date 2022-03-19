@@ -12,4 +12,7 @@ export default {
       [packageJson.name]: r('.'),
     },
   },
+  test: {
+    globals: true,
+  },
 }
